@@ -16,13 +16,40 @@ def calculate_expenses(expenses):
     
     return total, categories
 
-# List of expenses
-expenses = [
-    {'amount':50, 'category':'food'},
-    {'amount':20, 'category':'transfort'},
-    {'amount':10, 'category':'entertainment'}
-]
+# Function to take the input from user
+def get_user_input():
+    expenses = []
+    while True:
+        try:
+            # Take user input for amount and category
+            category = input("Enter the expense category (e.g., food, transport): ").strip().lower()
+            amount = float(input("Enter the expense amount (or type 'done' to finish): "))
 
+            # Validate the category and amount
+            if category == "":
+                print("Category cannot be empty. Please try again.")
+                continue
+            
+            # Add expense to the list
+            expenses.append({'amount': amount, 'category': category})
+
+        except ValueError:
+            # Check if the user typed 'done' to exit or an invalid input was entered
+            user_input = input("Enter the expense amount (or type 'done' to finish): ").strip().lower()
+            if user_input == "done":
+                break
+            else:
+                print("Invalid input. Please enter a valid number for the expense amount.")
+                continue
+
+    return expenses
+
+# Main execution
+expenses = get_user_input()
 total, categories = calculate_expenses(expenses)
-print(f"Total Expenses: ${total}")
-print(f"Category Breakdow: {categories}")
+
+# Output the results
+print(f"\nTotal Expenses: ${total}")
+print("Category Breakdown:")
+for category, amount in categories.items():
+    print(f"- {category.capitalize()}: ${amount}")
