@@ -10,6 +10,6 @@ aimed at strengthening problem-solving skills and understanding core Python conc
 ### Clone the repository:
 ``` git clone https://github.com/username/python-practice-projects.git ``` 
 ### Navigate to the repository:
-``` cd python-practice-projects ```
+``` cd python_practice ```
 ### Install any necessary dependencies (if applicable for individual projects):
 ``` pip install -r requirements.txt ```
