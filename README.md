@@ -13,3 +13,11 @@ aimed at strengthening problem-solving skills and understanding core Python conc
 ``` cd python_practice ```
 ### Install any necessary dependencies (if applicable for individual projects):
 ``` pip install -r requirements.txt ```
+
+## Projects
+
+### Expense Tracker
+### Description: At his project we will an expense tracker app where users can input their monthly expenses. You need to calculate the total expense and categorize them(e.g. food, transpoert, entertainment).
+
+### Number Guessing Game
+#### Description: The program generates a random number between 1 and 100, and the player has to guess the number. The program provides hints (higher or lower) until the player guesses correctly.
