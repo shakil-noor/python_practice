@@ -1,3 +1,4 @@
+import random
 # Function to load questions from a file
 def load_questions(filename):
     questions = []  # Initialize an empty list to store the questions
@@ -42,6 +43,8 @@ def run_quiz():
         print("No questions to quiz!")
         return
     
+    random.shuffle(questions)  # Shuffle the list of questions to make the quiz more dynamic
+
     score = 0  # Initialize the score counter to 0
 
     # Iterate through each question in the loaded questions list
