@@ -61,5 +61,41 @@ def run_quiz():
     # After all questions are asked, print the final score
     print(f"\nYou got {score} out of {len(questions)} correct")
 
-# Call the run_quiz function to start the quiz
-run_quiz()
+# Function to create question_list
+def create_questions():
+    question_list = []
+    while True:
+        question = input("Enter question: ")
+        answer = input("Enter answer: ")
+        question_list.append({"question": question, "answer": answer})
+
+        more = input("Do you want to add another flashcard? (y/n): ").lower()
+        if more != 'y':
+            break
+    
+    # Save flashcards to a text file
+    with open("quiz_questions.txt", "a") as file:  # Open the file in append mode
+        for card in question_list:
+            file.write(f"\n{card['question']};{card['answer']}")
+
+    print("Questions have been saved to 'quiz_questions.txt'.")
+
+def main():
+    while True:
+        # Display the menu with options for the user
+        print("\n1. Play Quiz")
+        print("2. Add Question")
+
+        # Prompt user for their choice
+        choice = input("Enter choice what you want to do: ")
+        
+        if choice == '1':
+            run_quiz()
+            break
+        if choice == '2':
+            create_questions()
+            break
+        else:
+            print("Invalid choice! Please enter either 1 or 2.")
+
+main()
